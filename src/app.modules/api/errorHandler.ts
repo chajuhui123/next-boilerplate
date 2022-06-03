@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 export const errorHandler = (error) => {
   const _message = {
     /* BadRequest */
@@ -8,9 +10,6 @@ export const errorHandler = (error) => {
 
     /* Forbidden */
     403: '접근 권한이 없습니다.',
-
-    /* Not Found */
-    404: '페이지를 찾을 수 없습니다.',
   };
 
   try {
@@ -19,14 +18,8 @@ export const errorHandler = (error) => {
     let errorMessage = error.data.error ?? _message[error.status];
     let errorCode = error.status;
 
-    // notification.error({
-    //   message: `Error ${errorCode}`,
-    //   description: errorMessage,
-    // });
+    message.error(`${errorCode}: ${errorMessage}`);
   } catch (e) {
-    // notification.error({
-    //   message: 'Error',
-    //   description: '예기치 못한 오류가 발생했습니다.',
-    // });
+    message.error(`예기치 못한 오류가 발생했습니다.`);
   }
 };
