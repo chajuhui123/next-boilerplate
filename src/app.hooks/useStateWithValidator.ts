@@ -21,6 +21,7 @@ export const useStateWithValidator = <T>(
   };
 
   const changeValue = (v: T) => {
+    setValue(v);
     pipe(
       validator(v),
       match(

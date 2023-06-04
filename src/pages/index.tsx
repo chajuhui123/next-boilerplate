@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const IndexPage = () => (
   <div>
@@ -8,7 +8,12 @@ const IndexPage = () => (
         <a>About</a>
       </Link>
     </p>
+    <p>
+      <Link href="/test">
+        <a>Test</a>
+      </Link>
+    </p>
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
