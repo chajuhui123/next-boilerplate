@@ -1,6 +1,6 @@
 import axios from "axios";
 import sign from "./sign";
-import { objectToURL } from "../func/index";
+import { objectToURL } from "../func/query";
 import { errorHandler } from "./errorHandler";
 
 let axiosClient = axios.create({
