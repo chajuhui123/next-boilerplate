@@ -9,5 +9,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
-// next-dev.js:25 Warning: Prop `className` did not match. Server: "sc-ftvSup dBwQT" Client: "sc-bczRLJ ucJrK"
