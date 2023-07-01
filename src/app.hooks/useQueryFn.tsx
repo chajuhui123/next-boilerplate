@@ -1,6 +1,6 @@
-import { useQuery } from 'react-query';
-import api from '../app.modules/api';
-import { qs } from '../app.modules/util/qs';
+import { useQuery } from "react-query";
+import api from "@modules/api/api";
+import { qs } from "@modules/util/qs";
 
 export const request = async ({ queryKey, param, ...props }) => {
   try {

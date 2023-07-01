@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useStateWithValidator } from "../app.hooks/useStateWithValidator";
-import { validatePhoneNumber } from "../app.modules/util/validate";
+import { useStateWithValidator } from "@hooks/useStateWithValidator";
+import { validatePhoneNumber } from "@modules/util/validate";
 
 const TestPage = () => {
   const [phoneNumber, setPhoneNumber, phoneNumberValidator] =
