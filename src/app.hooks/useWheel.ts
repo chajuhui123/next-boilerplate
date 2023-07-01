@@ -11,10 +11,16 @@ export const useWheel = (
   callback: TCallback
 ): React.RefObject<HTMLDivElement> => {
   const ref = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   const handleMouseWheel = (event: WheelEvent) => {
     event.preventDefault();
-    callback(ref, event.deltaY, ref.current?.scrollTop); // 입력받은 콜백함수
+    if (!timeoutRef.current) {
+      callback(ref, event.deltaY, ref.current?.scrollTop); // 입력받은 콜백함수
+      timeoutRef.current = window.setTimeout(() => {
+        timeoutRef.current = null;
+      }, 1000);
+    }
   };
 
   useEffect(() => {
@@ -23,6 +29,7 @@ export const useWheel = (
 
     return () => {
       currentRef.removeEventListener("wheel", handleMouseWheel); // for 메모리 누수 방지
+      window.clearTimeout(timeoutRef.current);
     };
   }, [ref, callback]);
 
