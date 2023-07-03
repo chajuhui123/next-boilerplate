@@ -13,6 +13,11 @@ const IndexPage = () => (
         <a>Test</a>
       </Link>
     </p>
+    <p>
+      <Link href="/scroll">
+        <a>Scroll Test</a>
+      </Link>
+    </p>
   </div>
 );
 
